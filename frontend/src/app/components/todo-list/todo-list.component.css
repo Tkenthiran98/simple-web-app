@@ -1,0 +1,338 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Welcome Header Styling */
+.welcome-header {
+  color: #000;
+  text-align: center;
+  padding: 40px;
+}
+
+.welcome-header h1 {
+  font-size: 4.5em;
+  margin: 0;
+  color: #2192cf;
+}
+
+.welcome-header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Container for the Form */
+.todo-form-container {
+  max-width: 830px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title Styling */
+.todo-form-container h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styling */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Input Fields */
+.input-field {
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Add Button */
+.btn-add {
+  padding: 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}
+
+/* Error Messages */
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 20px 0;
+}
+
+/* Container Styling */
+.todo-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list-container h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Todo List Styling */
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: background-color 0.3s;
+}
+
+.todo-item:hover {
+  background-color: #f1f1f1;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-update {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+}
+
+/* Success Messages */
+.success-message {
+  color: #28a745;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+/* Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-header {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.popup-input:focus {
+  border-color: #007bff;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.popup-btn {
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-btn-cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.popup-btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.popup-btn-save {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.popup-btn-save:hover {
+  background-color: #0056b3;
+}
+
+/* Search Bar */
+.search-bar-container {
+  margin: 25px; /* Add margin for spacing */
+  padding-left: 270px; /* Move the search bar slightly to the right */
+  text-align: left; /* Align content to the left */
+  margin-top: 50px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Full width by default */
+  max-width: 250px; /* Adjust maximum width as needed */
+  margin-left: 20px; /* Move the search bar slightly to the right */
+  padding-right: 20px; /* Add padding to the right for better appearance */
+}
+
+.search-field {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* Increased padding for better appearance */
+  border: 1px solid #ddd; /* Slightly lighter border */
+  border-radius: 20px; /* Rounded corners for a modern look */
+  font-size: 16px; /* Increased font size for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for a subtle lift effect */
+  transition: all 0.3s ease; /* Smooth transition for interactions */
+}
+
+.search-field:focus {
+  border-color: #007bff; /* Highlight border color on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-form-container, .todo-list-container {
+    padding: 20px;
+  }
+
+  .todo-form-container h3 {
+    font-size: 1.6em;
+  }
+
+  .input-field {
+    font-size: 0.9em;
+  }
+
+  .btn-add, .btn {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .welcome-header h1 {
+    font-size: 2em;
+  }
+
+  .welcome-header p {
+    font-size: 1em;
+  }
+
+  .search-wrapper {
+    max-width: 300px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-form-container {
+    padding: 10px;
+  }
+
+  .todo-form-container h3 {
+    font-size: 1.4em;
+  }
+
+  .input-field {
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  .btn-add, .btn {
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  .todo-item {
+    padding: 10px;
+  }
+
+  .search-wrapper {
+    max-width: 250%; /* Further adjust width for very small screens */
+    margin-left: -20px; /* Adjust left margin for smaller screens */
+    padding-right: 10px; /* Adjust padding for smaller screens */
+  }
+}

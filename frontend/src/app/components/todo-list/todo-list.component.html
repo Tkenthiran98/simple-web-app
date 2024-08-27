@@ -1,0 +1,112 @@
+<div class="todo-app">
+  <header class="welcome-header">
+    <h1>Welcome to Your To-Do List</h1>
+    <p>Manage your tasks efficiently and stay organized.</p>
+  </header>
+
+  <!-- Add New Todo -->
+  <div class="todo-form-container">
+    <h3>Add New To-Do</h3>
+    <div class="todo-form">
+      <input
+        class="input-field"
+        type="text"
+        placeholder="Title"
+        #title
+        (input)="clearError('title')"
+      />
+      <div *ngIf="errorMessageTitle" class="error-message">{{ errorMessageTitle }}</div>
+      <input
+        class="input-field"
+        type="text"
+        placeholder="Description"
+        #description
+        (input)="clearError('description')"
+      />
+      <div *ngIf="errorMessageDescription" class="error-message">
+        {{ errorMessageDescription }}
+      </div>
+      <button class="btn btn-add" (click)="addTodo(title.value, description.value)">
+        Add
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar-container">
+    <div class="search-wrapper">
+      <input
+        class="search-field"
+        type="text"
+        placeholder="Search To-Dos"
+        [(ngModel)]="searchTerm"
+        (input)="filterTodos()"
+      />
+    </div>
+  </div>
+
+  <!-- Display Todos -->
+  <div class="todo-list-container">
+    <h2>To-Do List</h2>
+    <div *ngIf="filteredTodos.length > 0">
+      <ul class="todo-list">
+        <li *ngFor="let todo of filteredTodos">
+          <div class="todo-item">
+            <h3>{{ todo.title }}</h3>
+            <p>{{ todo.description }}</p>
+            <div class="todo-actions">
+              <button class="btn btn-delete" (click)="deleteTodo(todo._id)">
+                Delete
+              </button>
+              <button class="btn btn-update" (click)="openEditPopup(todo)">
+                Update
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="filteredTodos.length === 0">
+      <p class="no-todos-message">No todos available.</p>
+    </div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+
+  <!-- Edit Todo Popup -->
+  <div class="popup" [ngClass]="{ active: isEditPopupOpen }">
+    <div class="popup-header">Edit Todo</div>
+    <div class="popup-content">
+      <input class="popup-input" [(ngModel)]="editTodo.title" placeholder="Title" />
+      <input
+        class="popup-input"
+        [(ngModel)]="editTodo.description"
+        placeholder="Description"
+      />
+    </div>
+    <div class="popup-actions">
+      <button class="popup-btn popup-btn-cancel" (click)="closeEditPopup()">
+        Cancel
+      </button>
+      <button class="popup-btn popup-btn-save" (click)="updateTodo()">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Popup -->
+  <div class="popup" [ngClass]="{ active: isDeletePopupOpen }">
+    <div class="popup-header">Confirm Deletion</div>
+    <div class="popup-content">
+      <p>Do you want to delete this todo?</p>
+    </div>
+    <div class="popup-actions">
+      <button class="popup-btn popup-btn-cancel" (click)="closeDeletePopup()">
+        Cancel
+      </button>
+      <button class="popup-btn popup-btn-save" (click)="confirmDelete()">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
