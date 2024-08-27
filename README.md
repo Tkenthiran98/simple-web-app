@@ -13,7 +13,6 @@ A basic web application built with Angular for the frontend, Flask for the backe
   - [Database Setup](#database-setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Screenshots](#screenshots)
 - [Video](#video)
 
